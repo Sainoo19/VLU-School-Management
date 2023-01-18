@@ -4,13 +4,11 @@ Chương trình C# Form này chỉ dùng cho mục đích học tập.
 
 Các thành viên đóng góp:
 
-+ hopingstar1806: Nguyễn Nguyên Khang
++ hopingstar1806: Nguyễn Nguyên Khang(Dev,Tech)
 
-+ sainoo19:       Nguyễn Viết Trung (Trưởng nhóm)
++ sainoo19:       Nguyễn Viết Trung (Trưởng nhóm)(Project Manager)
 
-+ Light-E:        Nguyễn Hồng Lĩnh
-
-+ DenDe:          Nguyễn Kim Tín
++ DenDe:          Nguyễn Kim Tín(Dev)
 
 Các câu lệnh dùng git:
 ```
