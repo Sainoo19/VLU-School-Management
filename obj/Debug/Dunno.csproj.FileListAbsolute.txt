@@ -1,0 +1,58 @@
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\Dunno.exe.config
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\Dunno.exe
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\Dunno.pdb
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\EntityFramework.dll
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\EntityFramework.xml
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.csproj.AssemblyReference.cache
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.csproj.SuggestedBindingRedirects.cache
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.Properties.Resources.resources
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.csproj.GenerateResource.cache
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.csproj.CoreCompileInputs.cache
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.csproj.CopyComplete
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.exe
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.pdb
+C:\Users\MR. LAM\Downloads\trungtamtinhoc\obj\Debug\Dunno.PView.FLopHoc.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\Dunno.exe.config
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\Dunno.exe
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\Dunno.pdb
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\EntityFramework.dll
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\EntityFramework.xml
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.csproj.AssemblyReference.cache
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.csproj.SuggestedBindingRedirects.cache
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.Properties.Resources.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FLopHoc.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.csproj.GenerateResource.cache
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.csproj.CoreCompileInputs.cache
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.csproj.CopyComplete
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.exe
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.pdb
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FHocPhan.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FDangNhap.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FTaiKhoan.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FHocVien.resources
+C:\Users\MR. LAM\OneDrive\Desktop\TrungTamTinHocDunno\obj\Debug\Dunno.PView.FBienLai.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\Dunno.exe.config
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\Dunno.exe
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\Dunno.pdb
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\EntityFramework.dll
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\EntityFramework.xml
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.csproj.AssemblyReference.cache
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.csproj.SuggestedBindingRedirects.cache
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.Properties.Resources.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FBienLai.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FDangNhap.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FHocPhan.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FHocVien.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FLopHoc.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.PView.FTaiKhoan.resources
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.csproj.GenerateResource.cache
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.csproj.CoreCompileInputs.cache
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.csproj.CopyComplete
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.exe
+C:\Users\MR. LAM\OneDrive\Documents\Ky Thuat Phan Mem\Lap Trinh Huong Doi Tuong\obj\Debug\Dunno.pdb

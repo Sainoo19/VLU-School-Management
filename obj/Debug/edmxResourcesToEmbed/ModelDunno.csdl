@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrungTamDunnoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HocVien">
+    <Key>
+      <PropertyRef Name="MaHocVien" />
+    </Key>
+    <Property Name="MaHocVien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="NoiSinh" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NgheNghiep" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LopHoc" Relationship="Self.FK__HocVien__MaLopHo__619B8048" FromRole="HocVien" ToRole="LopHoc" />
+    <NavigationProperty Name="BienLais" Relationship="TrungTamDunnoModel.FK__BienLai__MaHocVi__7B5B524B" FromRole="HocVien" ToRole="BienLai" />
+    <NavigationProperty Name="DiemThis" Relationship="TrungTamDunnoModel.FK__DiemThi__MaHocVi__08B54D69" FromRole="HocVien" ToRole="DiemThi" />
+  </EntityType>
+  <EntityType Name="LopHoc">
+    <Key>
+      <PropertyRef Name="MaLopHoc" />
+    </Key>
+    <Property Name="MaLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiKhoaBieu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NgayKhaiGiang" Type="DateTime" Precision="0" />
+    <Property Name="HocPhi" Type="Int32" />
+    <NavigationProperty Name="HocViens" Relationship="Self.FK__HocVien__MaLopHo__619B8048" FromRole="LopHoc" ToRole="HocVien" />
+    <NavigationProperty Name="MonHocs" Relationship="Self.FK__MonHoc__MaLopHoc__5DCAEF64" FromRole="LopHoc" ToRole="MonHoc" />
+    <Property Name="LoaiLop" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BienLais" Relationship="TrungTamDunnoModel.FK__BienLai__MaLopHo__7D439ABD" FromRole="LopHoc" ToRole="BienLai" />
+    <NavigationProperty Name="HocPhans" Relationship="TrungTamDunnoModel.FK__HocPhan__MaLopHo__09A971A2" FromRole="LopHoc" ToRole="HocPhan" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TenMonHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SoTietLyThuyet" Type="Int32" />
+    <Property Name="SoTietThucHanh" Type="Int32" />
+    <NavigationProperty Name="LopHoc" Relationship="Self.FK__MonHoc__MaLopHoc__5DCAEF64" FromRole="MonHoc" ToRole="LopHoc" />
+    <Property Name="MaHocPhan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HocPhan" Relationship="TrungTamDunnoModel.FK__MonHoc__MaHocPha__73BA3083" FromRole="MonHoc" ToRole="HocPhan" />
+    <NavigationProperty Name="DiemThis" Relationship="TrungTamDunnoModel.FK__DiemThi__MaMonHo__07C12930" FromRole="MonHoc" ToRole="DiemThi" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__HocVien__MaLopHo__619B8048">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="HocVien" Type="Self.HocVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="HocVien">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MonHoc__MaLopHoc__5DCAEF64">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="MonHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TrungTamDunnoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HocViens" EntityType="Self.HocVien" />
+    <EntitySet Name="LopHocs" EntityType="Self.LopHoc" />
+    <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__HocVien__MaLopHo__619B8048" Association="Self.FK__HocVien__MaLopHo__619B8048">
+      <End Role="LopHoc" EntitySet="LopHocs" />
+      <End Role="HocVien" EntitySet="HocViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MonHoc__MaLopHoc__5DCAEF64" Association="Self.FK__MonHoc__MaLopHoc__5DCAEF64">
+      <End Role="LopHoc" EntitySet="LopHocs" />
+      <End Role="MonHoc" EntitySet="MonHocs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TrungTamDunnoModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TrungTamDunnoModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="HocPhans" EntityType="TrungTamDunnoModel.HocPhan" />
+    <AssociationSet Name="FK__MonHoc__MaHocPha__73BA3083" Association="TrungTamDunnoModel.FK__MonHoc__MaHocPha__73BA3083">
+      <End Role="HocPhan" EntitySet="HocPhans" />
+      <End Role="MonHoc" EntitySet="MonHocs" />
+    </AssociationSet>
+    <EntitySet Name="BienLais" EntityType="TrungTamDunnoModel.BienLai" />
+    <AssociationSet Name="FK__BienLai__MaHocVi__7B5B524B" Association="TrungTamDunnoModel.FK__BienLai__MaHocVi__7B5B524B">
+      <End Role="HocVien" EntitySet="HocViens" />
+      <End Role="BienLai" EntitySet="BienLais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BienLai__MaLopHo__7D439ABD" Association="TrungTamDunnoModel.FK__BienLai__MaLopHo__7D439ABD">
+      <End Role="LopHoc" EntitySet="LopHocs" />
+      <End Role="BienLai" EntitySet="BienLais" />
+    </AssociationSet>
+    <EntitySet Name="DiemThis" EntityType="TrungTamDunnoModel.DiemThi" />
+    <AssociationSet Name="FK__DiemThi__MaHocVi__08B54D69" Association="TrungTamDunnoModel.FK__DiemThi__MaHocVi__08B54D69">
+      <End Role="HocVien" EntitySet="HocViens" />
+      <End Role="DiemThi" EntitySet="DiemThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DiemThi__MaMonHo__07C12930" Association="TrungTamDunnoModel.FK__DiemThi__MaMonHo__07C12930">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="DiemThi" EntitySet="DiemThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HocPhan__MaLopHo__09A971A2" Association="TrungTamDunnoModel.FK__HocPhan__MaLopHo__09A971A2">
+      <End Role="LopHoc" EntitySet="LopHocs" />
+      <End Role="HocPhan" EntitySet="HocPhans" />
+    </AssociationSet>
+    <EntitySet Name="TaiKhoans" EntityType="TrungTamDunnoModel.TaiKhoan" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="HocPhan">
+    <Key>
+      <PropertyRef Name="MaHocPhan" />
+    </Key>
+    <Property Name="MaHocPhan" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TenHocPhan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MonHocs" Relationship="TrungTamDunnoModel.FK__MonHoc__MaHocPha__73BA3083" FromRole="HocPhan" ToRole="MonHoc" />
+    <Property Name="MaLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LopHoc" Relationship="TrungTamDunnoModel.FK__HocPhan__MaLopHo__09A971A2" FromRole="HocPhan" ToRole="LopHoc" />
+  </EntityType>
+  <Association Name="FK__MonHoc__MaHocPha__73BA3083">
+    <End Type="TrungTamDunnoModel.HocPhan" Role="HocPhan" Multiplicity="0..1" />
+    <End Type="TrungTamDunnoModel.MonHoc" Role="MonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocPhan">
+        <PropertyRef Name="MaHocPhan" />
+      </Principal>
+      <Dependent Role="MonHoc">
+        <PropertyRef Name="MaHocPhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BienLai">
+    <Key>
+      <PropertyRef Name="MaBienLai" />
+    </Key>
+    <Property Name="MaBienLai" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaHocVien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaLopHoc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TinhTrang" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HocVien" Relationship="TrungTamDunnoModel.FK__BienLai__MaHocVi__7B5B524B" FromRole="BienLai" ToRole="HocVien" />
+    <NavigationProperty Name="LopHoc" Relationship="TrungTamDunnoModel.FK__BienLai__MaLopHo__7D439ABD" FromRole="BienLai" ToRole="LopHoc" />
+  </EntityType>
+  <Association Name="FK__BienLai__MaHocVi__7B5B524B">
+    <End Type="TrungTamDunnoModel.HocVien" Role="HocVien" Multiplicity="0..1" />
+    <End Type="TrungTamDunnoModel.BienLai" Role="BienLai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocVien">
+        <PropertyRef Name="MaHocVien" />
+      </Principal>
+      <Dependent Role="BienLai">
+        <PropertyRef Name="MaHocVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BienLai__MaLopHo__7D439ABD">
+    <End Type="TrungTamDunnoModel.LopHoc" Role="LopHoc" Multiplicity="0..1" />
+    <End Type="TrungTamDunnoModel.BienLai" Role="BienLai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="BienLai">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DiemThi">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+      <PropertyRef Name="MaHocVien" />
+    </Key>
+    <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaHocVien" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Diemthi1" Type="Single" />
+    <NavigationProperty Name="HocVien" Relationship="TrungTamDunnoModel.FK__DiemThi__MaHocVi__08B54D69" FromRole="DiemThi" ToRole="HocVien" />
+    <NavigationProperty Name="MonHoc" Relationship="TrungTamDunnoModel.FK__DiemThi__MaMonHo__07C12930" FromRole="DiemThi" ToRole="MonHoc" />
+  </EntityType>
+  <Association Name="FK__DiemThi__MaHocVi__08B54D69">
+    <End Type="TrungTamDunnoModel.HocVien" Role="HocVien" Multiplicity="1" />
+    <End Type="TrungTamDunnoModel.DiemThi" Role="DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocVien">
+        <PropertyRef Name="MaHocVien" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="MaHocVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DiemThi__MaMonHo__07C12930">
+    <End Type="TrungTamDunnoModel.MonHoc" Role="MonHoc" Multiplicity="1" />
+    <End Type="TrungTamDunnoModel.DiemThi" Role="DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMonHoc" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="MaMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HocPhan__MaLopHo__09A971A2">
+    <End Type="TrungTamDunnoModel.LopHoc" Role="LopHoc" Multiplicity="0..1" />
+    <End Type="TrungTamDunnoModel.HocPhan" Role="HocPhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="HocPhan">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TaiKhoan1" />
+    </Key>
+    <Property Name="TaiKhoan1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenHienThi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

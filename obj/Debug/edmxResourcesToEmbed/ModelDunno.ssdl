@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrungTamDunnoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BienLai">
+    <Key>
+      <PropertyRef Name="MaBienLai" />
+    </Key>
+    <Property Name="MaBienLai" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaHocVien" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaLopHoc" Type="nvarchar" MaxLength="30" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="DiemThi">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+      <PropertyRef Name="MaHocVien" />
+    </Key>
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaHocVien" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Diemthi" Type="real" />
+  </EntityType>
+  <EntityType Name="HocPhan">
+    <Key>
+      <PropertyRef Name="MaHocPhan" />
+    </Key>
+    <Property Name="MaHocPhan" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenHocPhan" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaLopHoc" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="HocVien">
+    <Key>
+      <PropertyRef Name="MaHocVien" />
+    </Key>
+    <Property Name="MaHocVien" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaLopHoc" Type="nvarchar" MaxLength="30" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="6" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="30" />
+    <Property Name="NgheNghiep" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LopHoc">
+    <Key>
+      <PropertyRef Name="MaLopHoc" />
+    </Key>
+    <Property Name="MaLopHoc" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="TenLopHoc" Type="nvarchar" MaxLength="30" />
+    <Property Name="ThoiKhoaBieu" Type="nvarchar" MaxLength="30" />
+    <Property Name="NgayKhaiGiang" Type="date" />
+    <Property Name="HocPhi" Type="int" />
+    <Property Name="LoaiLop" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaLopHoc" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaHocPhan" Type="nvarchar" MaxLength="30" />
+    <Property Name="TenMonHoc" Type="nvarchar" MaxLength="30" />
+    <Property Name="SoTietLyThuyet" Type="int" />
+    <Property Name="SoTietThucHanh" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TenHienThi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BienLai__MaHocVi__7B5B524B">
+    <End Role="HocVien" Type="Self.HocVien" Multiplicity="0..1" />
+    <End Role="BienLai" Type="Self.BienLai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocVien">
+        <PropertyRef Name="MaHocVien" />
+      </Principal>
+      <Dependent Role="BienLai">
+        <PropertyRef Name="MaHocVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BienLai__MaLopHo__7D439ABD">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="BienLai" Type="Self.BienLai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="BienLai">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DiemThi__MaHocVi__08B54D69">
+    <End Role="HocVien" Type="Self.HocVien" Multiplicity="1" />
+    <End Role="DiemThi" Type="Self.DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocVien">
+        <PropertyRef Name="MaHocVien" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="MaHocVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DiemThi__MaMonHo__07C12930">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="DiemThi" Type="Self.DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMonHoc" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="MaMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HocPhan__MaLopHo__09A971A2">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="HocPhan" Type="Self.HocPhan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="HocPhan">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HocVien__MaLopHo__619B8048">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="HocVien" Type="Self.HocVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="HocVien">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MonHoc__MaHocPha__73BA3083">
+    <End Role="HocPhan" Type="Self.HocPhan" Multiplicity="0..1" />
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HocPhan">
+        <PropertyRef Name="MaHocPhan" />
+      </Principal>
+      <Dependent Role="MonHoc">
+        <PropertyRef Name="MaHocPhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MonHoc__MaLopHoc__72C60C4A">
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="0..1" />
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LopHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Principal>
+      <Dependent Role="MonHoc">
+        <PropertyRef Name="MaLopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="TrungTamDunnoModelStoreContainer">
+    <EntitySet Name="BienLai" EntityType="Self.BienLai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiemThi" EntityType="Self.DiemThi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HocPhan" EntityType="Self.HocPhan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HocVien" EntityType="Self.HocVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LopHoc" EntityType="Self.LopHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BienLai__MaHocVi__7B5B524B" Association="Self.FK__BienLai__MaHocVi__7B5B524B">
+      <End Role="HocVien" EntitySet="HocVien" />
+      <End Role="BienLai" EntitySet="BienLai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BienLai__MaLopHo__7D439ABD" Association="Self.FK__BienLai__MaLopHo__7D439ABD">
+      <End Role="LopHoc" EntitySet="LopHoc" />
+      <End Role="BienLai" EntitySet="BienLai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DiemThi__MaHocVi__08B54D69" Association="Self.FK__DiemThi__MaHocVi__08B54D69">
+      <End Role="HocVien" EntitySet="HocVien" />
+      <End Role="DiemThi" EntitySet="DiemThi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DiemThi__MaMonHo__07C12930" Association="Self.FK__DiemThi__MaMonHo__07C12930">
+      <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="DiemThi" EntitySet="DiemThi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HocPhan__MaLopHo__09A971A2" Association="Self.FK__HocPhan__MaLopHo__09A971A2">
+      <End Role="LopHoc" EntitySet="LopHoc" />
+      <End Role="HocPhan" EntitySet="HocPhan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HocVien__MaLopHo__619B8048" Association="Self.FK__HocVien__MaLopHo__619B8048">
+      <End Role="LopHoc" EntitySet="LopHoc" />
+      <End Role="HocVien" EntitySet="HocVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MonHoc__MaHocPha__73BA3083" Association="Self.FK__MonHoc__MaHocPha__73BA3083">
+      <End Role="HocPhan" EntitySet="HocPhan" />
+      <End Role="MonHoc" EntitySet="MonHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MonHoc__MaLopHoc__72C60C4A" Association="Self.FK__MonHoc__MaLopHoc__72C60C4A">
+      <End Role="LopHoc" EntitySet="LopHoc" />
+      <End Role="MonHoc" EntitySet="MonHoc" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
