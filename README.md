@@ -1,4 +1,4 @@
-# Quản lý Tin Học
+# Quản Lý Trung Tâm Tin Học
 
 Chương trình C# Form này chỉ dùng cho mục đích học tập.
 
