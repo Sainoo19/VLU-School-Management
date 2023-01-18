@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="047ffadab8ef4536ae1eca88c8ab5ae2" Name="Diagram1">
+        <EntityTypeShape EntityType="TrungTamDunnoModel.HocVien" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.LopHoc" Width="1.5" PointX="6.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.MonHoc" Width="1.5" PointX="3.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.sysdiagram" Width="1.5" PointX="1.125" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__HocVien__MaLopHo__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__MonHoc__MaLopHoc__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__MonHoc__MaHocPha__73BA3083" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.HocPhan" Width="1.5" PointX="3.625" PointY="2.875" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.BienLai" Width="1.5" PointX="9.5" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__BienLai__MaHocVi__7B5B524B" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__BienLai__MaLopHo__7D439ABD" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.DiemThi" Width="1.5" PointX="9.75" PointY="6.75" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__DiemThi__MaHocVi__08B54D69" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__DiemThi__MaMonHo__07C12930" />
+        <AssociationConnector Association="TrungTamDunnoModel.FK__HocPhan__MaLopHo__09A971A2" />
+        <EntityTypeShape EntityType="TrungTamDunnoModel.TaiKhoan" Width="1.5" PointX="1.25" PointY="3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
